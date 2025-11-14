@@ -53,6 +53,12 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyViewHo
             intent.putExtra("EXTRA_PHONE", currentItem.getPhone());
             v.getContext().startActivity(intent);
         });
+
+        holder.delete.setOnClickListener(v->{
+            Intent intent = new Intent(v.getContext(), EditPage.class);
+            intent.putExtra("INDEX", position);
+
+        });
     }
 
     //returns size of data

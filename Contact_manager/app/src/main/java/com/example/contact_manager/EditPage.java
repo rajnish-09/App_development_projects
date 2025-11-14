@@ -29,16 +29,22 @@ public class EditPage extends AppCompatActivity {
         Intent intent = getIntent();
         String name = intent.getStringExtra("EXTRA_NAME");
         String phone = intent.getStringExtra("EXTRA_PHONE");
-        int index = Integer.parseInt(intent.getStringExtra("INDEX"));
+        int index = intent.getIntExtra("INDEX",-1);
+
         editName.setText(name);
         editPhone.setText(phone);
 
         save.setOnClickListener(v->{
-            String newName = editName.getText().toString();
-            String newPhone = editPhone.getText().toString();
-            MainActivity.cName.get(index).setName(newName);
-            MainActivity.cName.get(index).setPhone(newPhone);
+            if(index != -1){
+                String newName = editName.getText().toString();
+                String newPhone = editPhone.getText().toString();
+                MainActivity.cName.get(index).setName(newName);
+                MainActivity.cName.get(index).setPhone(newPhone);
+            }
+            //return to mainActivity
             finish();
+
+
         });
 
     }
