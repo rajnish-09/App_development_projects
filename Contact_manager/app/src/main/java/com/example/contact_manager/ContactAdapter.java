@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -57,6 +58,13 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyViewHo
         holder.delete.setOnClickListener(v->{
             Intent intent = new Intent(v.getContext(), EditPage.class);
             intent.putExtra("INDEX", position);
+            // Remove item from the list
+            contactArray.remove(position);
+
+            // Notify RecyclerView about item removed
+            notifyItemRemoved(position);
+            notifyItemRangeChanged(position, contactArray.size());
+            Toast.makeText(v.getContext(), "Deleted successfuly", Toast.LENGTH_SHORT).show();
 
         });
     }
