@@ -37,8 +37,6 @@
         android:text="@string/create_new_note"
         android:textSize="40sp"
         android:textColor="@android:color/white"
-        android:iconGravity="textStart"
-        android:iconPadding="8dp"
         android:padding="16dp"
         app:cornerRadius="50dp"
         app:backgroundTint="@color/orange"
