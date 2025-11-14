@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Contact_manager">
         <activity
+            android:name=".EditPage"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

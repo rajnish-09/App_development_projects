@@ -1,5 +1,6 @@
 package com.example.contact_manager;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +20,13 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyViewHo
 
     //define viewHolder
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView tv;
+        TextView tvName, tvPhone, edit, delete;
         public MyViewHolder(@NonNull View v){
             super(v);
-            tv = v.findViewById(R.id.contact_name);
+            tvName = v.findViewById(R.id.contact_name);
+            tvPhone = v.findViewById(R.id.contact_phone);
+            edit = v.findViewById(R.id.edit);
+            delete = v.findViewById(R.id.delete);
         }
     }
 
@@ -39,7 +43,16 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Contact currentItem = contactArray.get(position);
-        holder.tv.setText(currentItem.getName());
+        holder.tvName.setText(currentItem.getName());
+        holder.tvPhone.setText(currentItem.getPhone());
+
+        holder.edit.setOnClickListener(v->{
+            Intent intent = new Intent(v.getContext(), EditPage.class);
+            intent.putExtra("INDEX", position);
+            intent.putExtra("EXTRA_NAME", currentItem.getName());
+            intent.putExtra("EXTRA_PHONE", currentItem.getPhone());
+            v.getContext().startActivity(intent);
+        });
     }
 
     //returns size of data

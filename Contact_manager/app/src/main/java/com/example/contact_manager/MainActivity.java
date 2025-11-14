@@ -1,7 +1,10 @@
 package com.example.contact_manager;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,14 +18,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
-
-    ArrayList<Contact> cName = new ArrayList<>();
+    TextView edit, delete;
+    public static ArrayList<Contact> cName = new ArrayList<>();
     RecyclerView recyclerView;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        edit = findViewById(R.id.edit);
+        delete = findViewById(R.id.delete);
 
         String[] contacts_name = getResources().getStringArray(R.array.contacts_name);
         String[] contacts_phone = getResources().getStringArray(R.array.contacts_phone);
@@ -37,5 +43,16 @@ public class MainActivity extends AppCompatActivity {
 
         ContactAdapter cad = new ContactAdapter(cName);
         recyclerView.setAdapter(cad);
+
+
+
+
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        recyclerView.getAdapter().notifyDataSetChanged(); // refresh RecyclerView
+    }
+
 }
