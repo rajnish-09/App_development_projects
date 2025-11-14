@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">Contact_manager</string>
+
+    <string-array name="contacts_name">
+        <item>Rajnish</item>
+        <item>Rajan</item>
+        <item>Promise</item>
+        <item>Lakhan</item>
+        <item>Sumindra</item>
+        <item>Nischal</item>
+        <item>Rajnish</item>
+        <item>Rajan</item>
+        <item>Promise</item>
+        <item>Lakhan</item>
+        <item>Sumindra</item>
+        <item>Nischal</item>
+    </string-array>
+
+    <string-array name="contacts_phone">
+        <item>9874563210</item>
+        <item>9874563210</item>
+        <item>9874563210</item>
+        <item>9874563210</item>
+        <item>9874563210</item>
+        <item>9874563210</item>
+        <item>9874563210</item>
+        <item>9874563210</item>
+        <item>9874563210</item>
+        <item>9874563210</item>
+        <item>9874563210</item>
+        <item>9874563210</item>
+    </string-array>
+
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>
