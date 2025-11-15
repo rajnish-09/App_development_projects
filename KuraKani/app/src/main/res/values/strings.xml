@@ -4,5 +4,20 @@
     <string name="gmail_hint">Enter your gmail</string>
     <string name="password_hint">Enter your password</string>
     <string name="login">Login</string>
-    <string name="register_msg">Don\'t have account? <u>Register Now</u></string>
+    <string name="register_msg">Don\'t have account?</string>
+    <string name="register_link"><u>Register Now</u></string>
+    <string name="login_msg">Already have an account</string>
+    <string name="login_link"><u>Login</u></string>
+
+    <!-- registration hints -->
+    <string name="name_hint">Enter your name</string>
+    <string name="number_hint">Enter your number</string>
+    <string name="retype_password_hint">Re-type your password</string>
+
+    <!-- Radio button -->
+    <string name="gender_label">Select a gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <string name="register_btn">Register</string>
 </resources>

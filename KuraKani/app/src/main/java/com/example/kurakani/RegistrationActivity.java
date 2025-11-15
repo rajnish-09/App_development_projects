@@ -13,23 +13,21 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class LoginActivity extends AppCompatActivity {
-    Button login;
-    TextView register_link;
-
-    @Override
+public class RegistrationActivity extends AppCompatActivity {
+    TextView login_link;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        login = findViewById(R.id.login);
-        register_link = findViewById(R.id.register_link);
+        setContentView(R.layout.activity_registration);
+        login_link = findViewById(R.id.login_link);
 
-        register_link.setOnClickListener(new View.OnClickListener() {
+        login_link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
+
+
     }
 }
