@@ -3,6 +3,7 @@ package com.example.videoplayer1;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.SeekBar;
 import android.widget.VideoView;
 
@@ -25,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
         videoView = findViewById(R.id.videoView);
         play_pause_btn = findViewById(R.id.play_pause_button);
         seekBar = findViewById(R.id.seekBar);
-
+        videoView.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.jhandai);
+        MediaController mc = new MediaController(this);
+        videoView.setMediaController(mc);
+        videoView.start();
 
     }
 }
